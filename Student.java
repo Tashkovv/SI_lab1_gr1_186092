@@ -61,3 +61,27 @@ class Student {
 		return labPoints.size() > 8;
 	}
 }
+
+class Course{
+	List<Student> students;
+
+	public Course(List<Student> students) {
+		this.students = students;
+	}
+
+	public List<Student> getStudents() {
+		return students;
+	}
+
+	public void setStudents(List<Student> students) {
+		this.students = students;
+	}
+	public Integer numberOfSignatures(){
+		int number = 0;
+		for(Student student : students){
+			if(student.hasSignature())
+				++number;
+		}
+		return number;
+	}
+}
